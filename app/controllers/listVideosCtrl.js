@@ -19,7 +19,7 @@ app.controller('listVideosCtrl', ['$scope', '$rootScope', '$http', '$filter', fu
                     $rootScope.dates = getDates(response.data);
 
                     $rootScope.categorySelected = '';
-                    $rootScope.byDateSelected = $scope.dates[0];
+                    $rootScope.byDateSelected = '';
                 },
                 function error(response) {
 
