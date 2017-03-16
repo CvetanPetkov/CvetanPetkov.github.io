@@ -1,0 +1,11 @@
+<!--<div class="wrapper">-->
+    <article class="article" ng-repeat="video in videos | filter: categorySelected">
+        <h2>{{video.title}}</h2>
+        <iframe ng-src="{{video.url | replacer | trusted}}" frameborder="0" allowfullscreen>
+        </iframe>
+        <p>Category: {{video.category}}</p>
+        <p>Subtitles: {{video.subtitles}}</p>
+        <p>Added on: {{video._kmd.ect | date : "dd.MM.y"}}</p>
+
+    </article>
+<!--</div>-->

@@ -1,0 +1,122 @@
+html {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+}
+
+body {
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    min-height: 100%;
+}
+
+.aside {
+    order: 1;
+    width: 300px;
+    min-width: 300px;
+    background: #beddc9;
+    padding: 0 20px 20px 20px;
+}
+
+.nav-item {
+    background: rgba(150, 191, 221, 0.5);
+    margin-top: 15px;
+    padding: 10px 20px;
+    text-align: center;
+    line-height: 16px;
+}
+
+.nav-item:hover {
+    background: rgba(150, 191, 221, 1);
+    color: #FFFFFF;
+    -webkit-box-shadow: 2px 2px 7px 3px rgba(106,144,171,1);
+    -moz-box-shadow: 2px 2px 7px 3px rgba(106,144,171,1);
+    box-shadow: 2px 2px 7px 3px rgba(106,144,171,1);
+}
+
+.nav-text, .submit {
+    padding: 10px 15px;
+    font-variant: small-caps;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.filters {
+    margin: 20px 0;
+}
+
+.label {
+    display: inline-block;
+    width: 100px;
+    margin-top: 20px;
+}
+
+.filters p:first-of-type {
+    text-shadow: 2px 2px #92aa9b;
+    font-size: 1.3rem;
+    color: #505e56;
+}
+
+.filters select {
+    width: 150px;
+}
+
+.main {
+    order: 2;
+    flex-grow: 1;
+    background: #fcf2cb;
+    flex-flow: row wrap;
+}
+
+.form {
+    flex-direction: column;
+    flex-basis: 100%;
+}
+
+.form > * {
+    margin: 15px 15px 0 15px;
+    height: 30px;
+    border-radius: 4px;
+    outline: none;
+    padding-left: 5px;
+    max-width: 400px;
+}
+
+.form select {
+    width: 150px;
+}
+
+.submit {
+    padding: 0;
+    width: 150px;
+    margin-bottom: 15px;
+    border: 0;
+    background: #d7dcc4;
+}
+
+.submit:hover {
+    color: #FFFFFF;
+    -webkit-box-shadow: 2px 2px 7px 3px rgba(199,204,182,1);
+    -moz-box-shadow: 2px 2px 7px 3px rgba(99,204,182,1);
+    box-shadow: 2px 2px 7px 3px rgba(99,204,182,1);
+}
+
+.article {
+    width: 450px;
+    margin: 20px;
+    padding: 20px;
+    background: #cbd4ff;
+    border-radius: 15px;
+}
+
+.article h2 {
+    font-size: 1.2rem;
+}
+
+.article iframe {
+    width: 400px;
+    height: 200px;
+    display: block;
+    margin: 15px auto;
+}

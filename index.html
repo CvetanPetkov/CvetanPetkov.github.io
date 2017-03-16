@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Video System</title>
+    <link rel="stylesheet" href="app/styles/app.css">
+    <link rel="stylesheet" href="app/styles/reusable.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/controllers/listVideosCtrl.js"></script>
+    <script src="app/controllers/addVideoCtrl.js"></script>
+</head>
+<body class="flex" ng-app="videoApp" ng-controller="videoCtrl">
+
+<aside class="aside">
+    <nav class="nav">
+        <ul>
+            <li class="nav-item"><a href="#/" class="nav-text" ng-click="home()">home</a></li>
+            <li class="nav-item"><a href="#list-videos" class="nav-text" ng-click="listVideos()">list videos</a></li>
+            <li class="nav-item"><a href="#add-video" class="nav-text" ng-click="addVideo()">add video</a></li>
+        </ul>
+    </nav>
+
+    <div class="filters" ng-hide="hideFilters">
+<p>Filter videos:</p>
+
+        <p class="label">By category: </p>
+        <select ng-model="categorySelected" ng-options="o as o for o in categories">
+            <option value="" selected="selected">All</option>
+        </select>
+
+        <p class="label">By date: </p>
+        <select ng-model="byDateSelected" ng-options="o as o for o in dates | date : 'dd.MM.y'">
+            <option value="" selected="selected" disabled>Newest</option>
+        </select>
+<p>{{categorySelected}}</p>
+    </div>
+</aside>
+
+<main class="main flex" ng-view></main>
+
+</body>
+</html>

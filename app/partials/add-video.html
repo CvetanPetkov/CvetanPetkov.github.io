@@ -1,0 +1,11 @@
+<form class="form flex">
+    <input type="text" placeholder="Title" ng-model="title">
+    <input type="url" placeholder="URL" ng-model="url">
+    <input type="text" placeholder="Category" ng-model="category">
+    <select ng-model="subtitles">
+        <option value="" selected="selected" disabled>Has subtitles?</option>
+        <option>Yes</option>
+        <option>No</option>
+    </select>
+    <button class="submit" type="button" ng-click="uploadVideo()">submit</button>
+</form>
