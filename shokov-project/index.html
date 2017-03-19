@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Мебели Шоков и Ко</title>
-    <link rel="stylesheet" href="styles/custom-reset.css">
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="app/styles/custom-reset.css">
+    <link rel="stylesheet" href="app/styles/styles.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"
             integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
             crossorigin="anonymous"></script>
-    <script src="js/app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+    <script src="app/js/app.js"></script>
+    <script src="app/js/shokovApp.js"></script>
 </head>
-<body onload="startApp()">
+<body onload="startApp()" ng-app="shokovApp" ng-controller="mainCtrl">
 
 <div id="background-top">
     <div id="content" class="content flex">
@@ -19,48 +23,46 @@
         <aside>
             <header class="nav-header">
                 <figure class="logo">
-                    <a href="#">
-                        <img src="images/logo.jpg">
+                    <a href="#/">
+                        <img src="app/images/logo.jpg">
                     </a>
                 </figure>
             </header>
             <nav>
                 <ul>
                     <li>
-                        <a class="nav-item" href="#">мебели за дома</a>
+                        <a class="nav-item" href="#home-furnitures">мебели за дома</a>
                         <ul class="sub-list-home">
-                            <li><a class="sub-item" href="#">кухни</a></li>
-                            <li><a class="sub-item"  href="#">гардероби</a></li>
-                            <li><a class="sub-item"  href="#">спални</a></li>
-                            <li><a class="sub-item"  href="#">секции</a></li>
-                            <li><a class="sub-item"  href="#">антрета</a></li>
-                            <li><a class="sub-item"  href="#">други</a></li>
+                            <li><a class="sub-item" href="#kitchens">кухни</a></li>
+                            <li><a class="sub-item" href="#wardrobes">гардероби</a></li>
+                            <li><a class="sub-item" href="#bedrooms">спални</a></li>
+                            <li><a class="sub-item" href="#living-rooms">дневни</a></li>
+                            <li><a class="sub-item" href="#entrance">антрета</a></li>
+                            <li><a class="sub-item" href="#others">други</a></li>
                         </ul>
                     </li>
-                    <li><a class="nav-item" href="#">мебели за офиса</a></li>
-                    <li><a class="nav-item" href="#">магазини и заведения</a></li>
-                    <li><a class="nav-item" href="#">детски градини</a></li>
-                    <li><a class="nav-item" href="#">материали</a></li>
+                    <li><a class="nav-item" href="#office-furnitures">мебели за офиса</a></li>
+                    <li><a class="nav-item" href="#commercials">магазини и заведения</a></li>
+                    <li><a class="nav-item" href="#preschool">детски градини</a></li>
+                    <li><a class="nav-item" href="#materials">материали</a></li>
                     <li>
-                        <a class="nav-item" href="#">механизми и аксесоари</a>
+                        <a class="nav-item" href="#mechanisms">механизми и аксесоари</a>
                         <ul class="sub-list-home">
-                            <li><a class="sub-item" href="#">кухни</a></li>
-                            <li><a class="sub-item"  href="#">гардероби</a></li>
-                            <li><a class="sub-item"  href="#">панти</a></li>
+                            <li><a class="sub-item" href="#for-kitchens">кухни</a></li>
+                            <li><a class="sub-item"  href="#for-wardrobes">гардероби</a></li>
+                            <li><a class="sub-item"  href="#hinges">панти</a></li>
                         </ul>
                     </li>
-                    <li><a class="nav-item" href="#">матраци</a></li>
-                    <li><a class="nav-item" href="#">уреди</a></li>
-                    <li><a class="nav-item" href="#">контакти</a></li>
-                    <li><a class="login-btn" href="#">влез</a></li>
+                    <li><a class="nav-item" href="#mattresses">матраци</a></li>
+                    <li><a class="nav-item" href="#appliances">уреди</a></li>
+                    <li><a class="nav-item" href="#contacts">контакти</a></li>
+                    <li><a class="login-btn" href="#login">влез</a></li>
                 </ul>
             </nav>
 
         </aside>
 
-        <main>
-            MAIN SECTION
-        </main>
+        <main class="flex" ng-view></main>
 
     </div>
     <div id="background-bottom"></div>

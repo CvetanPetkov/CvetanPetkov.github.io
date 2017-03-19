@@ -1,0 +1,10 @@
+<form>
+
+
+    <span><input id="username" type="text" placeholder="UserName" ng-model="username"><i class="fa fa-check" aria-hidden="true" ng-hide="username.length < 4"></i></span>
+    <span><input id="password" type="password" placeholder="Password" ng-model="password"><i class="fa fa-check" aria-hidden="true" ng-hide="password.length < 4"></i></span>
+
+    <button ng-disabled="incomplete">вход</button>
+
+    <div class="error-msg" ng-show="error">грешен потребител и/или парола!</div>
+</form>
