@@ -56,7 +56,8 @@
                     <li><a class="nav-item" href="#mattresses">матраци</a></li>
                     <li><a class="nav-item" href="#appliances">уреди</a></li>
                     <li><a class="nav-item" href="#contacts">контакти</a></li>
-                    <li><a class="login-btn" href="#login">влез</a></li>
+                    <li><a class="login-btn" href="#login" ng-hide="getUserName()">влез</a></li>
+                    <li><a class="login-btn" href="#login" ng-show="getUserName()">здравей {{getUserName()}}</a></li>
                 </ul>
             </nav>
 

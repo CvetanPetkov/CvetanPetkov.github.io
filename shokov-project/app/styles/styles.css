@@ -153,7 +153,7 @@ main{
 form {
     padding: 25px;
     background: rgba(0,0,0,0.5);
-    max-width: 400px;
+    /*max-width: 400px;*/
     text-align: center;
 }
 
@@ -161,7 +161,11 @@ form span {
     position: relative;
 }
 
-form input {
+form.form-login span {
+    display: block;
+}
+
+form.form-login input {
     width: 200px;
     height: 30px;
     margin-bottom: 20px;
@@ -201,6 +205,12 @@ form button[disabled="disabled"] {
 .error-msg {
     color: red;
     margin-top: 20px;
+}
+form h3 {
+    font-size: 2rem;
+    letter-spacing: 4px;
+    font-weight: lighter;
+    text-transform: uppercase;
 }
 
 /*MAIN END*/

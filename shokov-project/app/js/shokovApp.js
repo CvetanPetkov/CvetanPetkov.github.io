@@ -65,10 +65,12 @@ ngApp.config(['$routeProvider', function ($routeProvider) {
         })
 }]);
 
-ngApp.controller('mainCtrl', ['$scope', function ($scope) {
-
+ngApp.controller('mainCtrl', ['$scope', '$rootScope', function ($scope, $rootScope) {
+    $rootScope.getUserName = function () {
+        return sessionStorage.getItem('username');
+    }
 }]);
-ngApp.controller('loginCtrl', ['$scope', function ($scope) {
+ngApp.controller('loginCtrl', ['$scope', '$http', function ($scope, $http) {
     $scope.username = '';
     $scope.password = '';
     $scope.incomplete = true;
@@ -87,5 +89,40 @@ ngApp.controller('loginCtrl', ['$scope', function ($scope) {
         } else {
             $scope.incomplete = true;
         }
+    };
+
+    $scope.login = function () {
+        let hostUrl = 'https://baas.kinvey.com';
+        let appKey = 'kid_rkRuoFBsg';
+        let appSecret = '5b3ece9325744393887ce2e65ed91514';
+        let loginUrl = hostUrl + '/user/' + appKey + '/login';
+        let basicAuth = 'Basic ' + btoa(appKey + ':' + appSecret);
+        let userData = {
+            username: $scope.username,
+            password: $scope.password
+        };
+
+        $http({
+            method : 'POST',
+            url : loginUrl,
+            data : userData,
+            headers : {
+                authorization : basicAuth,
+                contentType : 'application/json'
+            }
+        })
+            .then(function success(response) {
+                    $scope.username = '';
+                    $scope.password = '';
+                    let authToken = response.data._kmd.authtoken;
+                    $scope.sessionName = response.data.username;
+                    sessionStorage.setItem('username', $scope.sessionName);
+                    sessionStorage.setItem('authToken', authToken);
+                },
+                function error(response) {
+                    $scope.error = true;
+                    $scope.username = '';
+                    $scope.password = '';
+                })
     }
 }]);
