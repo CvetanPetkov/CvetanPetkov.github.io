@@ -24,6 +24,7 @@ body {
     width: 100%;
     position: relative;
     z-index: 0;
+    overflow-y: auto;
 }
 
 #background-bottom {
@@ -148,13 +149,11 @@ main{
 
 
 
-
+/*ADMIN START*/
 
 form {
     padding: 25px;
     background: rgba(0,0,0,0.5);
-    /*max-width: 400px;*/
-    text-align: center;
 }
 
 form span {
@@ -165,8 +164,8 @@ form.form-login span {
     display: block;
 }
 
-form.form-login input {
-    width: 200px;
+form input, form select, form textarea {
+    width: 300px;
     height: 30px;
     margin-bottom: 20px;
     padding-left: 15px;
@@ -176,20 +175,24 @@ form.form-login input {
     color: #FFFFFF;
 }
 
-form input::-webkit-input-placeholder {
+#category>option {
+    background-color: #a8a8a7;
+}
+
+form input::-webkit-input-placeholder,
+form textarea::-webkit-input-placeholder {
     color: #cecece;
 }
 
 .fa-check {
-    color: #008000;
+    color: #009700;
     position: absolute;
     right: 10px;
-    top: 3px;
+    top: 6px;
 }
 
 form button {
     display: block;
-    margin: 0 auto;
     padding: 6px 20px;
     border: none;
     background: #FFFFFF;
@@ -205,12 +208,55 @@ form button[disabled="disabled"] {
 .error-msg {
     color: red;
     margin-top: 20px;
+    font-size: 0.8rem;
 }
+
+.success-msg {
+    color: #009700;
+    margin-top: 20px;
+    font-size: 0.8rem;
+}
+
+form .flex {
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
 form h3 {
     font-size: 2rem;
     letter-spacing: 4px;
     font-weight: lighter;
     text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 15px;
 }
 
+form>p {
+    margin-bottom: 25px;
+    padding-bottom: 0.2rem;
+    text-align: center;
+    border-bottom: solid 1px #FFFFFF;
+}
+
+form section:last-of-type {
+    margin-left: 25px;
+}
+
+form section label {
+    display: block;
+    cursor: pointer;
+}
+
+form section:last-of-type label>p {
+    font-style: italic;
+    font-size: 0.8rem;
+    color: #009700;
+    display: inline-block;
+}
+
+section>textarea {
+    height: 150px;
+}
+
+/*ADMIN END*/
 /*MAIN END*/

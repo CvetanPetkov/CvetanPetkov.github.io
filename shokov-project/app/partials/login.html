@@ -5,13 +5,42 @@
 
     <button ng-disabled="incomplete" ng-click="login()">вход</button>
 
+
     <div class="error-msg" ng-show="error">грешен потребител и/или парола!</div>
+    <br>
+    <div>Use "user" : "user"</div>
 
 </form>
 
-<form ng-show="getUserName()">
+<form class="form-upload" ng-show="getUserName()">
     <h3>администраторски панел</h3>
+    <p>въведи данните, за да създадеш нова карта</p>
 
-    <span><input type="file" placeholder="Избери снимка" ng-model="photo"></span>
+    <div class="flex">
+        <section>
+            <label for="category">избери категория:</label>
+            <select ng-model="categorySelected" ng-options="o as o for o in categories" id="category">
+                <option value="" selected="selected" disabled>от тук</option>
+            </select>
 
+            <label for="card-heading">въведи заглавие:</label>
+            <input type="text" placeholder="заглавие..." ng-model="cardHeading" id="card-heading">
+
+            <label for="card-description">въведи описание:</label>
+            <textarea placeholder="описание..." ng-model="cardDescription" id="card-description"></textarea>
+        </section>
+        <section><label for="photos-count">въведи брой снимки: <p>максимален размер 1024/768 !</p></label>
+
+            <input type="text" placeholder="число 1-9" ng-model="photosCount" id="photos-count">
+
+            <div class="photo-name-wrapper" ng-repeat="numb in photosArr track by $index">
+                <label for="photo-name">въведи името на файла:</label>
+                <input type="text" placeholder="напр. kuhnq{{$index + 1}}.jpg" ng-model="photosArr[$index]" id="photo-name">
+            </div>
+        </section>
+    </div>
+
+    <button ng-disabled="" ng-click="uploadCard()">запиши</button>
+    <div class="success-msg" ng-show="success">успешно създаде нова карта!</div>
+    <div class="error-msg" ng-show="error">възникна грешка!</div>
 </form>
