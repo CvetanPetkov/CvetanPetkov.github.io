@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Кухни</title>
-</head>
-<body>
-Кухни
-{{data}}
-</body>
-</html>
+<article class="furniture-article" ng-repeat="kitchen in kitchens">
+    <h2>{{kitchen.heading}}</h2>
+    <figure ng-click="">
+        <img ng-src="app/images/{{kitchen.photos[0]}}">
+    </figure>
+    <p>{{kitchen.description}}</p>
+</article>

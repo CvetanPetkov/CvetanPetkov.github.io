@@ -70,11 +70,6 @@ ngApp.controller('mainCtrl', ['$scope', '$rootScope', function ($scope, $rootSco
     $rootScope.getUserName = function () {
         return sessionStorage.getItem('username');
     };
-
-    $scope.displayKitchens = function () {
-        $rootScope.$emit('displayKitchens', {});
-        console.log('displayKitchens1');
-    }
 }]);
 ngApp.controller('loginCtrl', ['$scope', '$http', function ($scope, $http) {
     $scope.username = '';
@@ -185,14 +180,9 @@ ngApp.controller('loginCtrl', ['$scope', '$http', function ($scope, $http) {
     };
 
 }]);
-ngApp.controller('kitchensCtrl', ['$scope', '$rootScope', '$http', function ($scope, $rootScope, $http) {
+ngApp.controller('kitchensCtrl', ['$scope', '$http', function ($scope, $http) {
 
-    $rootScope.$on('displayKitchens', function () {
-        $scope.getKitchens();
-        console.log('displayKitchens2');
-    });
-
-    $scope.getKitchens = function () {
+    $scope.getKitchens = (function () {
         let category = 'кухни';
         let hostUrl = 'https://baas.kinvey.com';
         let appKey = 'kid_rkRuoFBsg';
@@ -208,10 +198,11 @@ ngApp.controller('kitchensCtrl', ['$scope', '$rootScope', '$http', function ($sc
             }
         })
             .then(function success(response) {
-                    $scope.data = response.data;
+                    $scope.kitchens = response.data;
+                    console.log($scope.kitchens);
                 },
                 function error(response) {
 
                 })
-    };
+    })();
 }]);
