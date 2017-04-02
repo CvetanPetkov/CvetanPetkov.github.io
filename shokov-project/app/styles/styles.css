@@ -145,6 +145,7 @@ main{
     width: 70%;
     justify-content: space-around;
     flex-flow: row wrap;
+    position: relative;
 }
 
 .base-category-article {
@@ -163,6 +164,7 @@ main{
 .furniture-article {
     width: 400px;
     padding: 25px;
+    margin-bottom: 25px;
     background: rgba(0,0,0,0.5);
     text-align: justify;
 }
@@ -301,4 +303,31 @@ section>textarea {
 }
 
 /*ADMIN END*/
+/*CAROUSEL START*/
+
+.carousel-wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: solid 10px #000000;
+}
+
+.carousel-wrapper>div {
+    width: 1024px;
+    height: 768px;
+}
+
+.carousel-wrapper .fa {
+    font-size: 2rem;
+    color: #FFFFFF;
+    cursor: pointer;
+    text-shadow: 0px 0px 10px #787878;
+}
+
+.close-icon {
+    height: 50px;
+    right: 0;
+}
+
+/*CAROUSEL END*/
 /*MAIN END*/

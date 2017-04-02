@@ -1,4 +1,4 @@
-let ngApp = angular.module('shokovApp', ['ngRoute']);
+let ngApp = angular.module('shokovApp', ['ngRoute', 'angular-carousel']);
 
 ngApp.config(['$routeProvider', function ($routeProvider) {
     $routeProvider
@@ -180,7 +180,10 @@ ngApp.controller('loginCtrl', ['$scope', '$http', function ($scope, $http) {
     };
 
 }]);
-ngApp.controller('kitchensCtrl', ['$scope', '$http', function ($scope, $http) {
+ngApp.controller('kitchensCtrl', ['$scope', '$http', 'Carousel', function ($scope, $http, Carousel) {
+
+    $scope.photos = [];
+    $scope.Carousel = Carousel;
 
     $scope.getKitchens = (function () {
         let category = 'кухни';
@@ -199,10 +202,17 @@ ngApp.controller('kitchensCtrl', ['$scope', '$http', function ($scope, $http) {
         })
             .then(function success(response) {
                     $scope.kitchens = response.data;
-                    console.log($scope.kitchens);
                 },
                 function error(response) {
 
                 })
     })();
+
+    $scope.displayCarousel = function (kitchen) {
+        $scope.photos = kitchen.photos;
+    };
+
+    $scope.clearCarousel = function () {
+        $scope.photos = [];
+    };
 }]);

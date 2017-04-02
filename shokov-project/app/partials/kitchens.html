@@ -1,7 +1,29 @@
 <article class="furniture-article" ng-repeat="kitchen in kitchens">
     <h2>{{kitchen.heading}}</h2>
-    <figure ng-click="">
+    <figure ng-click="displayCarousel(kitchen)">
         <img ng-src="app/images/{{kitchen.photos[0]}}">
     </figure>
     <p>{{kitchen.description}}</p>
 </article>
+
+<section class="carousel-wrapper" ng-if="photos.length > 0">
+    <div ng-carousel ng-carousel-name="example-carousel2">
+        <slidecontainer class="carousel-slides">
+            <slide ng-repeat="photo in photos" ng-carousel-watch="photo">
+                <img src="app/images/{{photo}}">
+            </slide>
+        </slidecontainer>
+
+        <div class="carousel-arrow carousel-arrow-left">
+            <i class="fa fa-chevron-left" aria-hidden="true" ng-click="Carousel.get('example-carousel2').previous()"></i>
+        </div>
+
+        <div class="carousel-arrow carousel-arrow-right">
+            <i class="fa fa-chevron-right" aria-hidden="true" ng-click="Carousel.get('example-carousel2').next()"></i>
+        </div>
+
+        <div class="carousel-arrow close-icon">
+            <i class="fa fa-window-close" aria-hidden="true" ng-click="clearCarousel()"></i>
+        </div>
+    </div>
+</section>
