@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мебели Шоков и Ко</title>
+    <link rel="stylesheet" href="app/styles/custom-reset.css">
+    <link rel="stylesheet" href="app/styles/styles.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="app/styles/angular-carousel.css">
+
+    <script src="app/js/jquery-3.2.0.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
+    <script src="app/js/angular-carousel.js"></script>
+    <script src="app/js/app.js"></script>
+    <script src="app/js/shokovApp.js"></script>
+</head>
+<body onload="startApp()" ng-app="shokovApp" ng-controller="mainCtrl">
+
+<div id="background-top">
+    <div id="content" class="content flex">
+
+        <aside>
+            <header class="nav-header">
+                <figure class="logo">
+                    <a href="#/">
+                        <img src="app/images/logo.jpg">
+                    </a>
+                </figure>
+            </header>
+            <nav>
+                <ul>
+                    <li>
+                        <a class="nav-item" href="#home-furnitures">мебели за дома</a>
+                        <ul class="sub-list-home">
+                            <li><a class="sub-item" href="#kitchens" ng-click="setCategorySelected('кухни')">кухни</a></li>
+                            <li><a class="sub-item" href="#wardrobes" ng-click="setCategorySelected('гардероби')">гардероби</a></li>
+                            <li><a class="sub-item" href="#bedrooms" ng-click="setCategorySelected('спални')">спални</a></li>
+                            <li><a class="sub-item" href="#living-rooms" ng-click="setCategorySelected('дневни')">дневни</a></li>
+                            <li><a class="sub-item" href="#entrance" ng-click="setCategorySelected('антрета')">антрета</a></li>
+                            <li><a class="sub-item" href="#others" ng-click="setCategorySelected('други')">други</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="nav-item" href="#office-furnitures" ng-click="setCategorySelected('офиси')">мебели за офиса</a></li>
+                    <li><a class="nav-item" href="#commercials" ng-click="setCategorySelected('магазини и заведения')">магазини и заведения</a></li>
+                    <li><a class="nav-item" href="#preschool" ng-click="setCategorySelected('детски градини')">детски градини</a></li>
+                    <li><a class="nav-item" href="#materials">материали</a></li>
+                    <li>
+                        <a class="nav-item" href="#mechanisms">механизми и аксесоари</a>
+                        <ul class="sub-list-home">
+                            <li><a class="sub-item" href="#for-kitchens">кухни</a></li>
+                            <li><a class="sub-item"  href="#for-wardrobes">гардероби</a></li>
+                            <li><a class="sub-item"  href="#hinges">панти</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="nav-item" href="#mattresses">матраци</a></li>
+                    <li><a class="nav-item" href="#appliances">уреди</a></li>
+                    <li><a class="nav-item" href="#contacts">контакти</a></li>
+                    <li><a class="login-btn" href="#login" ng-hide="getUserName()">влез</a></li>
+                    <li><a class="login-btn" href="#login" ng-show="getUserName()">здравей {{getUserName()}}</a></li>
+                </ul>
+            </nav>
+
+        </aside>
+
+        <main class="flex" ng-view></main>
+
+    </div>
+    <div id="background-bottom"></div>
+</div>
+</body>
+</html>

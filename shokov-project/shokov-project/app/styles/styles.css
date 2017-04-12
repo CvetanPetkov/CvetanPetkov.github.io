@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    text-transform: lowercase;
+    font-variant: small-caps;
+    color: #ffffff;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 100;
+}
+
+.background {
+    height: 100%;
+    width: 100%;
+}
+
+#background-top {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 0;
+    overflow-y: auto;
+}
+
+#background-bottom {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
+#content {
+    width: 100%;
+    color: #ffffff;
+    position: absolute;
+    z-index: 2;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+/*ASIDE START*/
+
+aside {
+    width: 250px;
+    margin-top: 20px;
+    background: rgba(0,0,0,0.6);
+    padding: 10px;
+}
+
+.logo {
+    text-align: center;
+}
+
+.logo img {
+    width: 200px;
+}
+
+aside li {
+    margin-top: 10px;
+    position: relative;
+    line-height: 25px;
+}
+
+aside>li:last-of-type {
+    margin-top: 0;
+}
+
+.nav-item:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.6);
+    transition: width 0.5s 0.1s ease-out;
+}
+
+aside li:nth-of-type(1) .nav-item:after,
+aside li:nth-of-type(6) .nav-item:after {
+    font-family: 'FontAwesome', serif;
+    content: '\f054';
+    position: absolute;
+    right: 0;
+    font-size: 1rem;
+    padding-top: 2px;
+    padding-right: 5px;
+}
+
+.nav-item {
+    font-size: 1.2rem;
+    padding: 3px 10px;
+}
+
+.nav-item:hover:before {
+    width: 100%;
+}
+
+.sub-list-home {
+    visibility: hidden;
+    position: absolute;
+    left: 100%;
+    top: -10px;
+    margin-left: 10px;
+    padding: 0 10px 10px 10px;
+    background: rgba(0,0,0,0.5);
+    font-size: 1.2rem;
+    transition: visibility 0.1s 0.4s ease-out;
+}
+
+.nav-item:hover + .sub-list-home,
+.sub-list-home:hover {
+    visibility: visible;
+}
+
+.sub-item {
+    display: inline-block;
+    padding: 3px 10px;
+    transition: scale 0.3s;
+}
+
+.sub-item:hover {
+    transform: scale(1.1);
+}
+
+.login-btn {
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    padding: 3px 10px;
+}
+
+/*ASIDE END*/
+/*MAIN START*/
+
+main{
+    margin-top: 20px;
+    width: 70%;
+    justify-content: space-around;
+    flex-flow: row wrap;
+    position: relative;
+}
+
+.base-category-article {
+    max-width: 800px;
+    padding: 25px;
+    background: rgba(0,0,0,0.5);
+    text-align: justify;
+}
+
+.base-category-article p {
+    margin-top: 20px;
+}
+
+.first-word {
+    font-size: 2.5rem;
+    background: rgba(219, 47, 73, 0.7);
+    padding: 5px 30px 10px 10px;
+    border: solid 1px grey;
+    position: relative;
+}
+
+.first-word:after {
+    content: '\0026';
+    font-size: 0.9rem;
+    color: #000000;
+    font-style: italic;
+    position: absolute;
+    right: 18px;
+    top: 22px;
+}
+
+.last-word {
+    font-size: 2.5rem;
+    background: #000000;
+    padding: 0 5px 5px 5px;
+    border: solid 1px #FFFFFF;
+    position: absolute;
+    right: -35px;
+    top: 4px;
+}
+
+.red-link {
+    font-size: 1.4rem;
+    font-style: italic;
+    padding: 2px 2px 0 2px;
+    color: rgba(219, 47, 73, 0.7);
+}
+
+.red-link:hover {
+    text-shadow: 0 0 1px #FFFFFF;
+}
+
+/*FURNITURES START*/
+
+.furniture-article {
+    width: 400px;
+    padding: 25px;
+    margin-bottom: 25px;
+    background: rgba(0,0,0,0.5);
+    text-align: justify;
+}
+
+.furniture-article figure {
+    padding: 10px 0;
+    margin: 20px auto;
+    border-top: solid 1px #FFFFFF;
+    border-bottom: solid 1px #FFFFFF;
+    cursor: pointer;
+}
+
+.furniture-article img{
+    width: 350px;
+}
+
+.furniture-article p {
+    background: rgba(219, 47, 73, 0.3);
+    border: solid 1px #FFFFFF;
+    padding: 5px 7px;
+}
+
+/*FURNITURES END*/
+
+
+
+
+
+/*ADMIN START*/
+
+form {
+    padding: 25px;
+    background: rgba(0,0,0,0.5);
+}
+
+form span {
+    position: relative;
+}
+
+form.form-login span {
+    display: block;
+}
+
+form input, form select, form textarea {
+    width: 300px;
+    height: 30px;
+    margin-bottom: 20px;
+    padding-left: 15px;
+    outline: none;
+    border: none;
+    background: rgba(255, 255, 255, 0.6);
+    color: #FFFFFF;
+}
+
+#category>option {
+    background-color: #a8a8a7;
+}
+
+form input::-webkit-input-placeholder,
+form textarea::-webkit-input-placeholder {
+    color: #cecece;
+}
+
+.fa-check {
+    color: #009700;
+    position: absolute;
+    right: 10px;
+    top: 6px;
+}
+
+form button {
+    display: block;
+    padding: 6px 20px;
+    border: none;
+    background: #FFFFFF;
+    font-size: 1.2rem;
+    outline: none;
+    cursor: pointer;
+}
+
+form button[disabled="disabled"] {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.error-msg {
+    color: red;
+    margin-top: 20px;
+    font-size: 0.8rem;
+}
+
+.success-msg {
+    color: #009700;
+    margin-top: 20px;
+    font-size: 0.8rem;
+}
+
+form .flex {
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+form h3 {
+    font-size: 2rem;
+    letter-spacing: 4px;
+    font-weight: lighter;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+form>p {
+    margin-bottom: 25px;
+    padding-bottom: 0.2rem;
+    text-align: center;
+    border-bottom: solid 1px #FFFFFF;
+}
+
+form section:last-of-type {
+    margin-left: 25px;
+}
+
+form section label {
+    display: block;
+    cursor: pointer;
+}
+
+form section:last-of-type label>p {
+    font-style: italic;
+    font-size: 0.8rem;
+    color: #009700;
+    display: inline-block;
+}
+
+section>textarea {
+    height: 150px;
+}
+
+/*ADMIN END*/
+/*CAROUSEL START*/
+
+.carousel-wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: solid 10px #000000;
+}
+
+.carousel-wrapper>div {
+    width: 1024px;
+    height: 768px;
+}
+
+.carousel-wrapper .fa {
+    font-size: 2rem;
+    color: #FFFFFF;
+    cursor: pointer;
+    text-shadow: 0px 0px 10px #787878;
+}
+
+.close-icon {
+    height: 50px;
+    right: 0;
+}
+
+/*CAROUSEL END*/
+/*MAIN END*/
